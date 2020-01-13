@@ -32,6 +32,25 @@
         <div v-on:click="available = !available" v-bind:class="changeColor">
             <span>Color Change</span>
         </div>
+    <button v-on:click="success= !success">Success</button>
+    <button v-on:click="error =!error">Error</button>
+    <span v-show="success">
+        Its a success
+    </span>
+    <span v-show="error">
+        Its a mistake
+    </span>
+    <ul>
+        <li v-for="name in members">{{name.name}}
+             </li>
+    </ul>
+    <template v-for="identity in members">
+        <h2>{{identity.secretIdentity}} </h2>
+        <template v-for="(power, index) in identity.powers">
+            <h5>{{index}}. Powers-{{power}} </h5>
+        </template>
+    </template>
+        
     </div>
 </body>
 <script src="app.js"></script>
