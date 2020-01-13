@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <!-- production version, optimized for size and speed -->
+     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+     <style>
+         span{
+             display: inline-block;
+             background-color: crimson;
+             padding: 10px;
+             color: darkgray;
+         }
+         .available span{
+             background-color: darkgreen;
+         }
+     </style>
+    <title>Lesson -2 </title>
+</head>
+<body>
+    <div id="app">
+    <p>the value of A : {{a}} </p>
+    <p>the value of B : {{b}} </p>
+    <button v-on:click="a++">add</button>
+    <button v-on:click="b++">Subtract</button>
+    <p>the value of Age + A : {{addAtoAge}} </p>
+    <p>the value of Age + B : {{addBtoAge}} </p>
+    <h4>Classes with bind</h4>
+        <button v-on:click="available = !available">Change Color</button>
+        <div v-on:click="available = !available" v-bind:class="changeColor">
+            <span>Color Change</span>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
