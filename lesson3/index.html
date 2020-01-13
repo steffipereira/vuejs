@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- production version, optimized for size and speed -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    
+    <style>
+        #punch-bag{
+            background: url('bag.png') no-repeat;
+            width: 200px;
+            height: 500px;
+            margin: 0 auto;
+            padding: 20px 0px;
+        }
+        #punch-bag.burst{
+            background: url('bag-burst.png') no-repeat;
+        }
+        #punch-progress{
+            width: 150px;
+            border: 1px solid #000;
+            margin: 0 auto;
+        }
+        #punch-progress div{
+            background-color: crimson;
+            height: 18px;
+        }
+        #buttons{
+            margin: 0 auto;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+    <title>Punch Game</title>
+</head>
+<body>
+    <div id="app">
+        <div id="punch-bag" v-bind:class="{burst:ended}" v-bind:style="{opacity: opacity}"></div>
+        <div id="punch-progress">
+            <div v-bind:style="{ width: progress + '%'} "> {{progress}}% </div>
+        </div>
+        <div id="buttons">
+            <button v-on:click="punch" v-show="!ended">Punch Me</button>
+            <button v-on:click="reset">Reset Me</button>
+        </div>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>
